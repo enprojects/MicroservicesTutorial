@@ -1,0 +1,43 @@
+﻿using Actio.Common.Commands;
+using Actio.Common.Events;
+using Actio.Common.Hosting;
+using Actio.Common.RabbitMq.Extentions;
+using Actio.Common.Services;
+using Microsoft.AspNetCore.Hosting;
+using RawRabbit;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Actio.Common.RabbitMq
+{
+    public class BusBuilder : BuilderBase
+    {
+        private IWebHost _webHost;
+        private IBusClient _bus;
+
+        public BusBuilder(IWebHost webHost, IBusClient bus)
+        {
+            _webHost = webHost;
+            _bus = bus;
+        }
+
+        public override ServiceHost Build()
+        {
+            return new ServiceHost(_webHost);
+        }
+
+
+        public BusBuilder SubscribeToCommand<TCommand>() where TCommand : ICommand
+        {
+       
+            var handler = (ICommandHandler<TCommand>)_webHost.Services.GetService(typeof(ICommandHandler<TCommand>));
+            _bus.WithCommandHandlerAsync(handler);
+
+            return this;
+
+        }
+
+       
+    }
+}
