@@ -5,6 +5,54 @@ using AppBuild = System.Func<string, int>;
 using AppFunc = System.Func<System.Collections.Generic.IDictionary<string, object>, System.Threading.Tasks.Task>;
 namespace AppFuncTest
 {
+
+    public abstract class Animal {
+
+        public abstract void MakeSound();
+        public abstract void MakeSound(Dog d);
+        public abstract void MakeSound(Cat d);
+    }
+
+    public class Dog : Animal
+    {
+        public override void MakeSound()
+        {
+            Console.WriteLine("Brrrrr");
+        }
+
+        public override void MakeSound(Dog d)
+        {
+            Console.WriteLine("dog love dog");
+        }
+
+        public override void MakeSound(Cat d)
+        {
+            Console.WriteLine( "cat hate dog (dog class)" );
+        }
+    }
+
+
+    public class Cat : Animal
+    {
+        public override void MakeSound()
+        {
+            Console.WriteLine("Ammmmm");
+        }
+
+        public override void MakeSound(Dog d)
+        {
+            Console.WriteLine("cat hate dog (cat class)");
+        }
+
+        public override void MakeSound(Cat d)
+        {
+            Console.WriteLine("cat love cat");
+        }
+
+        public void IamCat() { }
+    }
+
+
     class Program
     {
 
@@ -170,7 +218,9 @@ namespace AppFuncTest
 
             builder.Exceute("hellow");
 
-
+            Animal dog = new Dog();
+            Animal cat = new Cat();
+           
 
         }
     }
