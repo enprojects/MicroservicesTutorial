@@ -32,6 +32,7 @@ namespace Actio.Api
             services.AddMvc();
             services.AddBusManager(Configuration);
             services.AddHostedService<RegisterSubscriptions>();
+             
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

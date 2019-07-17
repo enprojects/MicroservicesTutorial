@@ -1,6 +1,7 @@
 ﻿using Actio.Common.Commands;
 using Actio.Common.Commands.ICommanInterfaces;
 using Actio.Common.Events;
+using RabbitMQ.Client;
 using RawRabbit;
 using System;
 using System.Collections.Generic;
@@ -11,8 +12,7 @@ namespace Actio.Common.infrastructure.RabbitMq.Extentions
 {
    public static class HelperExtention
     {
-    
-
+     
 
         public static Task WithCommandHandlerAsync<TCommand>(this IBusClient bus, ICommandHandler<TCommand> handler) where TCommand : ICommand =>
             bus.SubscribeAsync<TCommand>(msg => handler.HandleAsync(msg));

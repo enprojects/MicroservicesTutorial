@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Actio.Services.Identity", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Actio.Services.Activities", "src\Actio.Services.Activities\Actio.Services.Activities.csproj", "{D2F3CF4D-CF8E-4724-A374-7BAC9D01C79E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "src\ConsoleApp1\ConsoleApp1.csproj", "{05D4DB4B-217B-4E08-9459-4EBD30C461A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,18 @@ Global
 		{D2F3CF4D-CF8E-4724-A374-7BAC9D01C79E}.Release|x64.Build.0 = Release|Any CPU
 		{D2F3CF4D-CF8E-4724-A374-7BAC9D01C79E}.Release|x86.ActiveCfg = Release|Any CPU
 		{D2F3CF4D-CF8E-4724-A374-7BAC9D01C79E}.Release|x86.Build.0 = Release|Any CPU
+		{05D4DB4B-217B-4E08-9459-4EBD30C461A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05D4DB4B-217B-4E08-9459-4EBD30C461A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05D4DB4B-217B-4E08-9459-4EBD30C461A2}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{05D4DB4B-217B-4E08-9459-4EBD30C461A2}.Debug|x64.Build.0 = Debug|Any CPU
+		{05D4DB4B-217B-4E08-9459-4EBD30C461A2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{05D4DB4B-217B-4E08-9459-4EBD30C461A2}.Debug|x86.Build.0 = Debug|Any CPU
+		{05D4DB4B-217B-4E08-9459-4EBD30C461A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05D4DB4B-217B-4E08-9459-4EBD30C461A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05D4DB4B-217B-4E08-9459-4EBD30C461A2}.Release|x64.ActiveCfg = Release|Any CPU
+		{05D4DB4B-217B-4E08-9459-4EBD30C461A2}.Release|x64.Build.0 = Release|Any CPU
+		{05D4DB4B-217B-4E08-9459-4EBD30C461A2}.Release|x86.ActiveCfg = Release|Any CPU
+		{05D4DB4B-217B-4E08-9459-4EBD30C461A2}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -33,7 +33,7 @@ namespace Actio.Api.Controllers
 
  
 
-          // _busMgr.SubscribeToCommand<CreateUser>();
+          _busMgr.SubscribeToCommand<CreateUser>();
              
            _busMgr.PublishToBus<CreateUser>(new CreateUser { Name = "Test..." });
 

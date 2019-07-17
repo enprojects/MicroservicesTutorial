@@ -1,4 +1,5 @@
 ﻿using Actio.Common.Commands.ICommanInterfaces;
+using Actio.Common.Events;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -14,9 +15,11 @@ namespace Actio.Common.Infrastructure
 
         public static void AddCommandHandler(this IServiceCollection services)
         {
-           
-            List<Type> handlerTypes = typeof(ICommand).Assembly.GetTypes().Where(x => x.GetInterfaces().Any(t => IsHandlerInterface(t))).ToList();
-            
+            var test = Assembly.GetEntryAssembly().FullName;
+            var allTypes = Assembly.GetExecutingAssembly().GetTypes(); //  typeof(ICommandHandler<>).Assembly.GetTypes();
+
+            List<Type> handlerTypes = allTypes.Where(x => x.GetInterfaces().Any(t => IsHandlerInterface(t))).ToList();
+
             foreach (Type type in handlerTypes)
             {
                 AddHandler(services, type);
@@ -24,6 +27,7 @@ namespace Actio.Common.Infrastructure
 
         }
 
+     
 
         private static void AddHandler(IServiceCollection services, Type type)
         {
